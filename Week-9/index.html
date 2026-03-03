@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Movie Ticket Booking</h1>
+
+<form id="ticketForm">
+    <input type="number" id="quantity" placeholder="Quantity" required>
+
+    <select id="ticketType">
+        <option value="Regular">Regular</option>
+        <option value="Student">Student</option>
+        <option value="VIP">VIP</option>
+    </select>
+
+    <input type="text" id="movieTitle" placeholder="Movie Title" required>
+
+    <button type="submit">Add Ticket</button>
+</form>
+
+<table id="ticketTable" border="1">
+    <thead>
+        <tr>
+            <th>Quantity</th>
+            <th>Type</th>
+            <th>Movie</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+</table>
+
+<h2 id="totalCost">Total: $0.00</h2>
+</body>
+</html>
