@@ -1,34 +1,23 @@
 'use strict';
 
-<<<<<<< Updated upstream
-const form = document.getElementById("ticketform")
-=======
-<<<<<<< HEAD
-const form = document.getElementById("ticketForm")
-=======
-const form = document.getElementById("ticketform")
->>>>>>> 20fa1cde8e15ae773409fa03020b90e7e5f1130a
->>>>>>> Stashed changes
-const table = document.getElementById("ticketTable")
-const totalCost =  document.getElementById("totalCost")
+const form = document.getElementById("ticketForm");
+const table = document.getElementById("ticketTable");
+const totalCost = document.getElementById("totalCost");
 
-// Step-by-Step Solution — PART I
+// PART I
 
 class TicketItem {
-    constructor( quantity, ticketType, movieTitle) {
+    constructor(quantity, ticketType, movieTitle) {
         this.quantity = quantity;
         this.ticketType = ticketType;
         this.movieTitle = movieTitle;
     }
 
-    cost() { 
+    cost() {
         let price = 0;
 
-        switch(this.ticketType){
+        switch (this.ticketType) {
             case "Regular":
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
                 price = 10.00;
                 break;
             case "Student":
@@ -36,101 +25,47 @@ class TicketItem {
                 break;
             case "VIP":
                 price = 15.00;
-=======
->>>>>>> Stashed changes
-                price = 10.00
-                break;
-            case "Student":
-                price = 8.00
-                break;
-            case "VIP":
-                price = 15.00
-<<<<<<< Updated upstream
-=======
->>>>>>> 20fa1cde8e15ae773409fa03020b90e7e5f1130a
->>>>>>> Stashed changes
                 break;
         }
 
         return this.quantity * price;
     }
 
-    tr( doc, index, orderInstance) {
+    tr(doc, index, orderInstance) {
 
         const tr = doc.createElement("tr");
 
-        const tdQty = doc.createElement('td');
+        const tdQty = doc.createElement("td");
         tdQty.textContent = this.quantity;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         tr.appendChild(tdQty);
 
-        const tdType = doc.createElement('td');
+        const tdType = doc.createElement("td");
         tdType.textContent = this.ticketType;
         tr.appendChild(tdType);
-=======
->>>>>>> Stashed changes
-        tr.appendchild(tdQty);
 
-        const tdType = doc.createElement('td');
-        tdType.textContent = this.ticketType;
-        tr.appendchild(tdType);
-<<<<<<< Updated upstream
-=======
->>>>>>> 20fa1cde8e15ae773409fa03020b90e7e5f1130a
->>>>>>> Stashed changes
-
-        
-        const tdMovie = doc.createElement('td');
+        const tdMovie = doc.createElement("td");
         tdMovie.textContent = this.movieTitle;
-<<<<<<< Updated upstream
-        tr.appendchild(tdMovie);
-=======
-<<<<<<< HEAD
         tr.appendChild(tdMovie);
-=======
-        tr.appendchild(tdMovie);
->>>>>>> 20fa1cde8e15ae773409fa03020b90e7e5f1130a
->>>>>>> Stashed changes
 
-        const tdDelete = doc.createElement('td');
-        const btn = doc.createElement('button');
-       btn.textContent = "Delete"
+        const tdDelete = doc.createElement("td");
+        const btn = doc.createElement("button");
+        btn.textContent = "Delete";
 
-       btn.addEventListener("click", function() {
-        orderInstance.delete(index);
-        render();
-       });
+        btn.addEventListener("click", function () {
+            orderInstance.delete(index);
+            render();
+        });
 
-       tdDelete.appendChild(btn);
-       tr.appendChild(tdDelete);
+        tdDelete.appendChild(btn);
+        tr.appendChild(tdDelete);
 
-       return tr;
-
+        return tr;
     }
-
 }
 
-
-
-// Step-by-Step Solution — PART II
+// PART II
 
 class Booking {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-    constructor() {
-        
-    }
-    
-}
-<<<<<<< Updated upstream
-=======
->>>>>>> 20fa1cde8e15ae773409fa03020b90e7e5f1130a
->>>>>>> Stashed changes
 
     constructor() {
         this.orderedItems = [];
@@ -165,15 +100,11 @@ class Booking {
 
         return total;
     }
-
 }
 
-
-// PART III — Connect to DOM
+// PART III
 
 const booking = new Booking();
-
-// Render Function
 
 function render() {
 
@@ -188,7 +119,7 @@ function render() {
     totalCost.textContent = "$" + booking.cost().toFixed(2);
 }
 
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", function (e) {
 
     e.preventDefault();
 
@@ -203,5 +134,4 @@ form.addEventListener("submit", function(e){
     render();
 
     form.reset();
-
 });
